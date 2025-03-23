@@ -10,7 +10,23 @@ Este projeto é uma aplicação Java simples que utiliza uma API Rest para gerar
 ## Estrutura do Projeto
 O projeto segue a estrutura padrão do Maven:
 
-├── src │ ├── main │ │ ├── java │ │ └── resources │ └── test │ ├── java │ └── resources ├── pom.xml └── README.md
+├── src  
+│   
+├── main  
+│  
+│  
+├── java  
+│  
+│  
+└── resources  
+│  
+└── test  
+│  
+├── java  
+│  
+└── resources  
+├── pom.xml  
+└── README.md
 
 ## Configuração
 1. Clone o repositório:
