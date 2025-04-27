@@ -4,28 +4,30 @@
 Este projeto é uma aplicação Java simples que utiliza uma API Rest para gerar uma saída "Hello World".
 
 ## Requisitos
-- Java 11 ou superior
+- Java 8 ou superior
 - Maven 3.6.0 ou superior
+- Docker 20.10 ou superior
 
 ## Estrutura do Projeto
 O projeto segue a estrutura padrão do Maven:
 
-├── src  
-│   
-├── main  
-│  
-│  
-├── java  
-│  
-│  
-└── resources  
-│  
-└── test  
-│  
-├── java  
-│  
-└── resources  
-├── pom.xml  
+├── src 
+│ 
+├── main 
+│ 
+│ 
+├── java 
+│ 
+│ 
+└── resources 
+│ 
+└── test 
+│ 
+├── java 
+│ 
+└── resources 
+├── pom.xml 
+├── Dockerfile 
 └── README.md
 
 ## Configuração
@@ -38,20 +40,60 @@ O projeto segue a estrutura padrão do Maven:
 Compile o projeto:
 mvn clean install
 
-Execução
+Execução com Maven
 Para executar a aplicação, utilize o seguinte comando:
 
 ```sh
 mvn spring-boot:run
 ```
 
-Endpoints
-A aplicação expõe os seguintes endpoints:
-GET /hello
-Retorna uma mensagem "Hello World".
-Exemplos de Uso
-Requisição:
+## Execução com Docker
+Passo 1: Build da Imagem Docker
+Crie a imagem Docker utilizando o Dockerfile:
 
+```sh
+docker build -t hello-world-app .
+```
+
+Passo 2: Executar o Contêiner
+Execute o contêiner mapeando a porta 8080:
+
+```sh
+docker run -p 8080:8080 hello-world-app
+```
+
+Resposta esperada:
+```json
+{
+  "message": "Hello World"
+}
+```
+
+## Exemplos de Comandos Docker 
+
+Listar imagens Docker:  
+docker images
+
+Listar contêineres em execução:  
+docker ps
+
+Parar um contêiner:  
+docker stop <ID_DO_CONTAINER>
+
+Remover um contêiner:  
+docker rm <ID_DO_CONTAINER>
+
+Remover uma imagem:  
+docker rmi hello-world-app
+
+## Endpoints  
+A aplicação expõe os seguintes endpoints:  
+GET /hello  
+Retorna uma mensagem "Hello World".  
+
+## Exemplos de Uso
+
+Requisição:
 ```sh
 curl http://localhost:8080/hello
 ```
